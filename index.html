@@ -16,7 +16,7 @@
     <meta property="og:description" content="Shark Incremental made by MrRedShark77." />
     <meta property="og:image" content="https://mrredshark77.github.io/shark-incremental//textures/shark.png" />
 
-    <title>Shark Incremental</title>
+    <title>Shark Incremental Update</title>
 
     <script src="js/modules/icon.js"></script>
 
@@ -34,33 +34,25 @@
 
     <script src="js/features/offline.js"></script>
 
-    // Prestige
+    Now running as of v0.4.0.11
     <script src="js/features/automation.js"></script>
-
-    // Start
     <script src="js/features/shark.js"></script>
-
-    // Prestige (Part 2)
     <script src="js/features/research.js"></script>
     <script src="js/features/explore.js"></script>
-
-    // Core
+    
     <script src="js/features/core-reactor.js"></script>
     <script src="js/features/core-radiation.js"></script>
     <script src="js/features/core-assembler.js"></script>
 
-    // Evolution
     <script src="js/features/evolution.js"></script>
     <script src="js/features/cultivation.js"></script>
     <script src="js/features/forge.js"></script>
     <script src="js/features/particle-accel.js"></script>
 
-    // Singularity
     <script src="js/features/singularity.js"></script>
     <script src="js/features/solar-system.js"></script>
     <script src="js/features/constellation.js"></script>
 
-    // Hadronize
     <script src="js/features/hadron/hadron.js"></script>
 
     <script src="js/features/resets.js"></script>
@@ -213,6 +205,13 @@
                         </div>
                         <div id="core-assembler-grid"></div>
                         <div id="core-assembler-choose-div" class="table-center"></div>
+                        <br>
+                        <div class="table-center">
+                            <button class="big-btn core" id="import-assembler" onclick="importAssembler()">Import assembler</button>
+                            <button class="big-btn core" id="export-assembler" onclick="exportAssembler()">Export assembler</button>
+                            <button class="big-btn core" id="clear-assembler" onclick="clearAssembler()">Clear assembler</button>
+                        </div>
+                        
                     </td><td style="width: 50%;">
                         <p id="core-temp-after-div"></p>
                         <div id="core-assembler-buildings" class="table-center"></div>
@@ -483,7 +482,7 @@
 
         <div style="height: 60px;"></div>
         <div id="bottom-div">
-            Shark Incremental v0.4.0.1 by OmegaIMR, original by MrRedShark77
+            Shark Incremental v0.4.0.11 by OmegaIMR, original by MrRedShark77
             <div id="feature-progress">
                 <div id="fp-bar"></div>
                 <div id="fp-text">Feature Progression</div>
