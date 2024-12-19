@@ -84,7 +84,7 @@ function setupCoreAssemblerHTML() {
     for (let i = 0; i < CORE_ASSEMBLER.length; i++) {
         var r = CORE_REACTOR[i], a = CORE_ASSEMBLER[i]
 
-        h += `<button class="ca-building" id="ca-building-${i}-div" onclick="chooseCABuilding(${i})">
+        h += `<button class="core ca-building" id="ca-building-${i}-div" onclick="chooseCABuilding(${i})">
         <div class="table-center"><div>${lang_text(`core-${i}-name`)}</div><div class="ca-building-symbol" style="--color1: ${a.color[0]}; --color2: ${a.color[1]};"></div></div>
         <div id="ca-building-${i}-desc">???</div>
         </button>`
@@ -115,8 +115,12 @@ function placeCABuildling(i,b=ca_builder) {
 
 function updateCoreAssemblerHTML() {
     var req = CA_MAX_BUILDINGS_COST[player.core.max_buildings]??EINF
+    el('import-assembler').innerHTML = lang_text('import-assembler')
+    el('export-assembler').innerHTML = lang_text('export-assembler')
+    el('clear-assembler').innerHTML = lang_text('clear-assembler')
+
     el('ca-building-limit').innerHTML = lang_text('core-assembler-building-limit',player.core.max_buildings,req,tmp.totalCABuildings)
-    el('ca-building-limit').className = el_classes({locked: CURRENCIES.core.amount.lt(req), 'huge-btn': true})
+    el('ca-building-limit').className = el_classes({locked: CURRENCIES.core.amount.lt(req), 'core huge-btn': true})
 
     var icons = [icon("up-arrow"), icon("down-arrow")]
     var total_temp = E(6150)
@@ -143,7 +147,7 @@ function updateCoreAssemblerHTML() {
     for (let x = 0; x < 16; x++) {
         var b = player.core.assembler[x], b_el = el(`ca-grid-${x}-div`)
 
-        b_el.className = el_classes({'ca-grid-btn': true, active:b>=0})
+        b_el.className = el_classes({'core ca-grid-btn': true, active:b>=0})
 
         if (b>=0) {
             var r = CORE_REACTOR[b], a = CORE_ASSEMBLER[b]
@@ -183,5 +187,45 @@ function updateCoreAssemblerTemp() {
             tmp.cab_strengths[x]=s
             tmp.placedACBuildings[b]++
         }
+    }
+}
+
+function importAssembler() {
+    createPromptPopup(lang_text('popup-desc')["assembler-import"], input => {
+        let parsedInput = [];
+        
+        // Split the input by commas and process each part
+        for (let part of input.split(",")) {
+            part = part.trim(); // Remove any unnecessary whitespace
+           
+        let num = parseInt(part);
+         if (!isNaN(num)) parsedInput.push(num);
+        }
+        
+        buildAssembler(parsedInput); 
+    });
+}
+
+
+function clearAssembler() {
+    player.core.assembler = []; // Reset assembler 
+}
+
+
+function convertTreeToString2(tree) {
+    return tree.map(x=>x).join(",")
+}
+
+
+function exportAssembler() {
+copyToClipboard(convertTreeToString2(player.core.assembler))
+addNotify(lang_text("notify-desc")["copy_to_clipboard"])
+}
+
+
+function buildAssembler(parsedInput) {
+    clearAssembler()
+    for (let i = 0; i < parsedInput.length; i++) {
+        placeCABuildling(i, parsedInput[i]); // Add each item to the assembler
     }
 }
