@@ -255,6 +255,18 @@ const TABS = [
             ['core-radiation',()=>player.feature>=7],
             ['core-assembler',()=>player.feature>=9],
         ],
+            //Credit to mush298
+		    //https://github.com/mush298/shark-incremental-ng3
+		style: {
+			background: `repeating-conic-gradient(
+				rgba(95, 10, 10, 0.1) 0deg, 
+				rgba(95, 10, 10, 0.1) 25%, 
+				rgba(145, 0, 0, 0.4) 0deg, 
+				rgba(145, 0, 0, 0.6) 50%
+			) 0% 0% / 200px 200px #FF6961`,
+			backgroundSize: "200px 200px",
+			animation: `cosmic-pattern 20s linear infinite`,
+		}
     },{
         id: 'evolution',
         unl: ()=>player.humanoid.times>0,
@@ -266,6 +278,18 @@ const TABS = [
             ["forge",()=>player.feature>=15],
             ["particle-accel",()=>player.feature>=16],
         ],
+        //Credit to mush298
+		//https://github.com/mush298/shark-incremental-ng3
+		style: {
+			background: `repeating-conic-gradient(
+				rgba(0, 255, 3, 0.1) 0deg, 
+				rgba(0, 255, 3, 0.1) 25%, 
+				rgba(0, 200, 50, 0.4) 0deg, 
+				rgba(0, 150, 30, 0.6) 50%
+			) 0% 0% / 200px 200px #77dd77`,
+			backgroundSize: "200px 200px",
+			animation: `cosmic-pattern 20s linear infinite`,
+		}
     },{
         id: 'singularity',
         unl: ()=>player.singularity.first,
