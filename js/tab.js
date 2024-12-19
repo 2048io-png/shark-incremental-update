@@ -239,7 +239,7 @@ const TABS = [
         stab: [
             ["auto", ()=>player.feature>=2 || player.singularity.best_bh.gte(2)],
             ['research',()=>player.feature>=3],
-            ['explore',()=>()=>!tmp.ss_difficulty && player.feature>=4],
+            ['explore',()=>!tmp.ss_difficulty && player.feature>=4],
         ],
     },{
         unl: ()=>tmp.ss_difficulty,
