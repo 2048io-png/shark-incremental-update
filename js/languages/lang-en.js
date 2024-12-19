@@ -86,11 +86,14 @@ LANGUAGES.EN = {
         'tab-shark': toTextStyle('Shark','shark'),
         'tab-options': "Options",
         'tab-scalings': "Scalings",
+        
+        'tab-space-base': toTextStyle('Space Base','observ'),
+
+        'tab-prestige': toTextStyle('Prestige','prestige'),
         'tab-auto': "Automation",
         'tab-research': toTextStyle('Research','prestige'),
         'tab-explore': "Exploration",
-        'tab-space-base': toTextStyle('Space Base','observ'),
-
+        
         'tab-core': toTextStyle('Core','core'),
         'tab-core-reactor': toTextStyle('Core','core')+" Reactor",
         'tab-core-radiation': toTextStyle('Core','core')+" Radiation",
