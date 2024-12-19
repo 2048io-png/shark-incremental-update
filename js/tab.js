@@ -234,18 +234,13 @@ const TABS = [
     { // 0
         stab: "shark",
     },{
-        stab: "options",
-    },{
-        stab: "scalings",
-    },{
+        id: 'prestige',
         unl: ()=>player.feature>=2 || player.singularity.best_bh.gte(2),
-        stab: "auto",
-    },{
-        unl: ()=>player.feature>=3,
-        stab: "research",
-    },{ // 5
-        unl: ()=>!tmp.ss_difficulty && player.feature>=4,
-        stab: "explore",
+        stab: [
+            ["auto", ()=>player.feature>=2 || player.singularity.best_bh.gte(2)],
+            ['research',()=>player.feature>=3],
+            ['explore',()=>()=>!tmp.ss_difficulty && player.feature>=4],
+        ],
     },{
         unl: ()=>tmp.ss_difficulty,
         stab: "space-base",
@@ -298,6 +293,10 @@ const TABS = [
             "backgroundSize": "200px 200px",
             "animation": `cosmic-pattern 20s linear infinite`,
         },
+    },{
+        stab: "options",
+    },{
+        stab: "scalings",
     },
 ]
 
