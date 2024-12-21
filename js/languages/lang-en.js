@@ -779,7 +779,6 @@ LANGUAGES.EN = {
                 [`${format(1e100)} Total Dark Matter`,`Passively generate 100% of your ${toTextStyle("Dark Matter",'black-hole')} gained on reset.`],
             ]
         },
-
         'remnant-upgrades': [
             [`Welcome`,x=>`${toTextStyle("Shark",'shark')} Level Bonuses are ${x} stronger.`],
             [`Flowing`,x=>`Exploration base multiplier is boosted by ${x}.`],
@@ -873,7 +872,7 @@ LANGUAGES.EN = {
             [`Nebulae`, x=>`First 6 ${toTextStyle("Constellation",'star')} resources are ${x} stronger.`, x=>`No effect provided.`],
         ],
 
-        // Haronize
+        // Hadronize
 
         'hadron-cutscenes': [
             `Open your eyes before this point.`,
@@ -1128,6 +1127,10 @@ LANGUAGES.EN = {
         'research-bought': bool => bool ? `<b>Purchased</b>` : `<b>Not Purchased</b>`,
         'research-pages': x => `${x} pages`,
 
+        "import-assembler": `Import assembler`,
+        "export-assembler": `Export assembler`,
+        "clear-assembler": `Clear assembler`,
+        
         'purchased': "Purchased",
 
         'off-on': bool => bool ? "ON" : "OFF",
@@ -1140,6 +1143,7 @@ LANGUAGES.EN = {
         'popup-desc' : {
             import: `Paste in your save. WARNING: WILL OVERWRITE YOUR CURRENT SAVE!`,
             wipe: `Are you sure you want to wipe your save? To wipe, type "<span class="free-select">I'm sorry what I don't want sharks!</span>"`,
+            "assembler-import": `Paste in your core assembler.`,
             "evolution-tree-respec": `Are you sure you want to respec ${toTextStyle('Evolution','humanoid')} tree? It will trigger an ${toTextStyle('Evolution','humanoid')} reset, not gaining ${toTextStyle('Humanoid','humanoid')} sharks.`,
             "evolution-tree-import": `Paste in your evolution tree.`,
             "starter-upgrade-warning": `Are you sure you want to purchase this starter upgrade? You should purchase upgrade <b>"Shark Tier"</b>!`,
