@@ -241,6 +241,9 @@ const TABS = [
             ['research',()=>player.feature>=3],
             ['explore',()=>!tmp.ss_difficulty && player.feature>=4],
         ],
+	style: {
+            "background": `repeating-linear-gradient(#bff, #0ff, #bff)`,
+        },
     },{
         unl: ()=>tmp.ss_difficulty,
         stab: "space-base",
